@@ -1,12 +1,12 @@
 <nav>
     <div class="logo">
-        <a href="#">
+        <a [routerLink]="['login']">
             <img src="assets/logo.png" alt="Logo de SkyPark">
             SkyPark
         </a>
     </div>
     <ul class="nav-links">
-        <li><a href="#">Escritorio</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['escritorio']">Escritorio</a></li>
         <li><a href="#">Parking</a></li>
         <li><a href="#">Vehiculos</a></li>
         <li><a href="#">Reporte</a></li>
