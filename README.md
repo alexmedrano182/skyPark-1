@@ -1,5 +1,7 @@
 # Skypark
 
+No le hagan caso a que le puse al commit que era standalone, el proyecto de angular es *no* standalone :)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.4.
 
 ## Development server
