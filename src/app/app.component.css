@@ -1,13 +1,10 @@
-main {
-    max-width: 1000px;
-    margin: 20px auto;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 40px;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: blanchedalmond;
 }
 
-.map {
-    grid-column: 1/2;
+.container1 {
+    text-align: center;
+    /* Para centrar contenido */
 }

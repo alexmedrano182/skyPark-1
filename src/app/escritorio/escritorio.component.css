@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+}
+
+.circular-img {
+    border-radius: 50%;
+    /* Establece la forma circular */
+    width: 200px;
+    /* Ajusta el tamaño según tus necesidades */
+    height: 200px;
+    /* Ajusta el tamaño según tus necesidades */
+    object-fit: cover;
+    /* Ajusta el tamaño de la imagen sin deformarla */
+}
+.container-left {
+    width: 50%;
+    height: 100vh; /* Establece la altura al 100% del viewport */
+    background-color: #f0f0f0; /* Color de fondo */
+    float: left; /* Alinea a la izquierda */
+}
+/* Estilos para el contenedor derecho */
+.container-right {
+    width: 50%;
+    height: 100vh; /* Establece la altura al 100% del viewport */
+    background-color: #e0e0e0; /* Color de fondo */
+    float: right; /* Alinea a la derecha */
+}

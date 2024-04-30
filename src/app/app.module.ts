@@ -8,12 +8,18 @@ import { PlaceListComponent } from './components/place-list/place-list.component
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './login/login.component';
+import { EscritorioComponent } from './escritorio/escritorio.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewPlaceComponent,
-    PlaceListComponent
+    PlaceListComponent,
+    NavbarComponent,
+    LoginComponent,
+    EscritorioComponent
   ],
   imports: [
     BrowserModule,
