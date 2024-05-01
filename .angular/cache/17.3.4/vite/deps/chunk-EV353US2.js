@@ -1435,7 +1435,7 @@ function isVersionServiceProvider(provider) {
   return (component === null || component === void 0 ? void 0 : component.type) === "VERSION";
 }
 var name$o = "@firebase/app";
-var version$1 = "0.10.1";
+var version$1 = "0.10.2";
 var logger = new Logger("@firebase/app");
 var name$n = "@firebase/app-compat";
 var name$m = "@firebase/analytics-compat";
@@ -1461,7 +1461,7 @@ var name$3 = "@firebase/storage-compat";
 var name$2 = "@firebase/firestore";
 var name$1 = "@firebase/firestore-compat";
 var name = "firebase";
-var version = "10.11.0";
+var version = "10.11.1";
 var DEFAULT_ENTRY_NAME2 = "[DEFAULT]";
 var PLATFORM_LOG_STRING = {
   [name$o]: "fire-core",
@@ -2147,7 +2147,7 @@ registerCoreComponents("");
 
 // node_modules/firebase/app/dist/esm/index.esm.js
 var name2 = "firebase";
-var version2 = "10.11.0";
+var version2 = "10.11.1";
 registerVersion(name2, version2, "app");
 
 // node_modules/@angular/fire/fesm2022/angular-fire.mjs
@@ -2899,4 +2899,4 @@ firebase/app/dist/esm/index.esm.js:
    * limitations under the License.
    *)
 */
-//# sourceMappingURL=chunk-27JNSCT4.js.map
+//# sourceMappingURL=chunk-EV353US2.js.map
