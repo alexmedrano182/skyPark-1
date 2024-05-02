@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { EscritorioComponent } from './escritorio/escritorio.component';
+import { VehiculosComponent } from './vehiculos/vehiculos.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EscritorioComponent } from './escritorio/escritorio.component';
     PlaceListComponent,
     NavbarComponent,
     LoginComponent,
-    EscritorioComponent
+    EscritorioComponent,
+    VehiculosComponent
   ],
   imports: [
     BrowserModule,
