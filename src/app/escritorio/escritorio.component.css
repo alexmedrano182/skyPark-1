@@ -1,7 +1,7 @@
 .container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
     height: 40vh;
 }
 
@@ -14,14 +14,14 @@
 
 .container-left {
     width: 50%;
-    height: 400px;
+    height: 425px;
     background-color: #f0f0f0;
     float: left;
 }
 
 .container-right {
     width: 50%;
-    height: 400px;
+    height: 425px;
     background-color: #e0e0e0;
     float: right;
     display: flex;
