@@ -11,7 +11,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { EscritorioComponent } from './escritorio/escritorio.component';
+<<<<<<< HEAD
 import { ReporteComponent } from './reporte/reporte.component';
+=======
+import { VehiculosComponent } from './vehiculos/vehiculos.component';
+>>>>>>> origin/Gonzalo1
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { ReporteComponent } from './reporte/reporte.component';
     NavbarComponent,
     LoginComponent,
     EscritorioComponent,
+<<<<<<< HEAD
     ReporteComponent
+=======
+    VehiculosComponent
+>>>>>>> origin/Gonzalo1
   ],
   imports: [
     BrowserModule,
