@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import Place from '../../interfaces/place.interface';
-import { PlacesService } from '../../services/places.service';
+import Cliente from '../../interfaces/cliente.interface';
+import { ClientesService } from '../../services/clientes.service';
 
 @Component({
   selector: 'app-place-list',
@@ -9,28 +9,32 @@ import { PlacesService } from '../../services/places.service';
 })
 export class PlaceListComponent implements OnInit {
 
-  places: Place[];
+  clientes: Cliente[];
 
   constructor(
-    private placesService: PlacesService
+    private clientesService: ClientesService
   ) {
-    this.places = [{
-      name: 'Prueba de sitio',
-      description: 'Esto es una prueba',
-      latitude: 40,
-      longitude: -3,
-      image: 'https://media.timeout.com/images/105718969/750/422/image.jpg'
+    this.clientes = [{
+      nombre1: "Dui",
+      nombre2: "",
+      apellidoM: "Gutierres",
+      apellidoP: "Queso",
+      placa: "AB-234-024",
+      marca: "Chevryolet",
+      modelo: "Averlo",
+      color: "Transparente",
+      isPremium: true
     }];
   }
 
   ngOnInit(): void {
-    this.placesService.getPlaces().subscribe(places => {
-      this.places = places;
+    this.clientesService.getClientes().subscribe(clientes => {
+      this.clientes = clientes;
     })
   }
 
-  async onClickDelete(place: Place) {
-    const response = await this.placesService.deletePlace(place);
+  async onClickDelete(cliente: Cliente) {
+    const response = await this.clientesService.deleteCliente(cliente);
     console.log(response);
   }
 

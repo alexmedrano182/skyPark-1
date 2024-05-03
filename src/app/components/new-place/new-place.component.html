@@ -1,23 +1,39 @@
 <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
     <div class="mb-3">
-        <label class="form-label">Name</label>
-        <input type="text" class="form-control" formControlName="name">
+        <label class="form-label">Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre1">
     </div>
     <div class="mb-3">
-        <label class="form-label">Description</label>
-        <textarea class="form-control" cols="30" rows="10" formControlName="description"></textarea>
+        <label class="form-label">Seg. Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre2">
     </div>
     <div class="mb-3">
-        <label class="form-label">Latitude</label>
-        <input type="text" class="form-control" formControlName="latitude">
+        <label class="form-label">Apellido Paterno</label>
+        <input type="text" class="form-control" formControlName="apellidoP">
     </div>
     <div class="mb-3">
-        <label class="form-label">Longitude</label>
-        <input type="text" class="form-control" formControlName="longitude">
+        <label class="form-label">Apellido Materno</label>
+        <input type="text" class="form-control" formControlName="apellidoM">
     </div>
     <div class="mb-3">
-        <label class="form-label">Image</label>
-        <input type="text" class="form-control" formControlName="image">
+        <label class="form-label">Placa</label>
+        <input type="text" class="form-control" formControlName="placa">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Marca</label>
+        <input type="text" class="form-control" formControlName="marca">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Modelo</label>
+        <input type="text" class="form-control" formControlName="modelo">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Color</label>
+        <input type="text" class="form-control" formControlName="color">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Premium?</label>
+        <input type="text" class="form-control" formControlName="isPremium">
     </div>
     <input type="submit" value="Enviar" class="btn btn-info">
 </form>

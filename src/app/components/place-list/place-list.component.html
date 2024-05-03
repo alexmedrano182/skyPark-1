@@ -1,11 +1,13 @@
-<div class="places">
-    <div class="place" *ngFor="let place of places">
-        <div class="image" [ngStyle]="{ backgroundImage: 'url('+place.image+')' }"></div>
+<div class="clientes">
+    <div class="cliente" *ngFor="let cliente of clientes">
         <div class="info">
-            <h4>{{place.name}}</h4>
-            <p>{{place.description}}</p>
-            <p>Coordenadas: {{place.latitude}} / {{place.longitude}}</p>
-            <button class="btn btn-outline-danger" (click)="onClickDelete(place)">Borrar</button>
+            <h4>{{cliente.nombre1}} {{cliente.nombre2}} {{cliente.apellidoP}} {{cliente.apellidoM}}</h4>
+            <p>Placa: {{cliente.placa}}</p>
+            <p>Marca: {{cliente.marca}}</p>
+            <p>Modelo: {{cliente.modelo}}</p>
+            <p>Color: {{cliente.color}}</p>
+            <p>Premium: {{cliente.isPremium}}</p>
+            <button class="btn btn-outline-danger" (click)="onClickDelete(cliente)">Borrar</button>
         </div>
     </div>
 </div>
