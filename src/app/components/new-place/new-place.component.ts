@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { PlacesService } from '../../services/places.service';
+import { ClientesService } from '../../services/clientes.service';
 
 @Component({
   selector: 'app-new-place',
@@ -12,14 +12,18 @@ export class NewPlaceComponent implements OnInit {
   formulario: FormGroup;
 
   constructor(
-    private placesService: PlacesService
+    private clientesService: ClientesService
   ) {
     this.formulario = new FormGroup({
-      name: new FormControl(),
-      latitude: new FormControl(),
-      longitude: new FormControl(),
-      description: new FormControl(),
-      image: new FormControl()
+      nombre1: new FormControl(),
+      nombre2: new FormControl(),
+      apellidoP: new FormControl(),
+      apellidoM: new FormControl(),
+      placa: new FormControl(),
+      marca: new FormControl(),
+      modelo: new FormControl(),
+      color: new FormControl(),
+      isPremium: new FormControl()
     })
   }
 
@@ -28,7 +32,7 @@ export class NewPlaceComponent implements OnInit {
 
   async onSubmit() {
     console.log(this.formulario.value)
-    const response = await this.placesService.addPlace(this.formulario.value);
+    const response = await this.clientesService.addCliente(this.formulario.value);
     console.log(response);
   }
 
