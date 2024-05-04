@@ -1,13 +1,26 @@
 <div class="clientes">
-    <div class="cliente" *ngFor="let cliente of clientes">
-        <div class="info">
-            <h4>{{cliente.nombre1}} {{cliente.nombre2}} {{cliente.apellidoP}} {{cliente.apellidoM}}</h4>
-            <p>Placa: {{cliente.placa}}</p>
-            <p>Marca: {{cliente.marca}}</p>
-            <p>Modelo: {{cliente.modelo}}</p>
-            <p>Color: {{cliente.color}}</p>
-            <p>Premium: {{cliente.isPremium}}</p>
-            <button class="btn btn-outline-danger" (click)="onClickDelete(cliente)">Borrar</button>
-        </div>
-    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Placa</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Color</th>
+                <th>Premium</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cliente of clientes">
+                <td>{{cliente.nombre1}} {{cliente.nombre2}} {{cliente.apellidoP}} {{cliente.apellidoM}}</td>
+                <td>{{cliente.placa}}</td>
+                <td>{{cliente.marca}}</td>
+                <td>{{cliente.modelo}}</td>
+                <td>{{cliente.color}}</td>
+                <td>{{cliente.isPremium ? 'Sí' : 'No'}}</td>
+                <td><button class="btn btn-outline-danger" (click)="onClickDelete(cliente)">Borrar</button></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
