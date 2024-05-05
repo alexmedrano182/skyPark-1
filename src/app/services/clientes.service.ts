@@ -21,8 +21,10 @@ export class ClientesService {
   }
 
   deleteCliente(cliente: Cliente) {
+    const clienteRef = doc(this.firestore, `EntradasBasicas/${cliente.id}`);
     const clienteDocRef = doc(this.firestore, `EntradasBasicas/${cliente.id}`);
-    return deleteDoc(clienteDocRef);
+    return clienteRef;
+    //return deleteDoc(clienteDocRef);
   }
 
 }

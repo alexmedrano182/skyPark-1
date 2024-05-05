@@ -1,39 +1,48 @@
+<body>
+
 <div class="container">
     <img src="assets/logo.png" alt="Imagen Circular" class="circular-img">
 </div>
 
-<div class="container-left">
-    <!-- Contenido del contenedor izquierdo -->
-    <h2 style="text-align: center;">Entrada Basica</h2>
-
-    <div class="input-container">
-        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-        <input type="text" id="nombre" formControlName="nombre" placeholder="Ingrese su Nombre">
+    <div class="container-left">
+        <!-- Contenido del contenedor izquierdo -->
         <br>
-        <input type="text" id="apellidos" formControlName="apellidos" placeholder="Ingrese su Apellido">
-        <br>
-        <input type="text" id="placas" formControlName="placa" placeholder="Ingrese sus Placas">
-        <br>
-        <input type="text" id="modelo" formControlName="modelo" placeholder="Ingrese el Modelo">
-        <br>
-        <input type="text" id="color" formControlName="color" placeholder="Ingrese el Color">
-        <br>
-        <label for="premium">Usuario Premium:</label>
-        <input type="checkbox" id="premiumCheckbox" name="premiumCheckbox">
-        <br>
-        <input type="submit"  id="btnAceptar" value="Aceptar">
-        </form>
+        <h2 style="text-align: center;">Ingresar Entrada</h2>
+    
+        <div class="input-container">
+            <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <input type="text" id="nombre" formControlName="nombre" placeholder="Ingrese su Nombre">
+            <br><br>
+            <input type="text" id="apellidos" formControlName="apellidos" placeholder="Ingrese su Apellido">
+            <br><br>
+            <input type="text" id="placas" formControlName="placa" placeholder="Ingrese sus Placas">
+            <br><br>
+            <input type="text" id="marca" formControlName="marca" placeholder="Ingrese la Marca">
+            <br><br>
+            <input type="text" id="modelo" formControlName="modelo" placeholder="Ingrese el Modelo">
+            <br><br>
+            <input type="text" id="color" formControlName="color" placeholder="Ingrese el Color">
+            <br><br>
+            <label for="premium">Usuario Premium: </label>
+            <input type="checkbox" formControlName="isPremium" id="premiumCheckbox" name="premiumCheckbox">
+            <ng-container *ngIf="this.formulario.value.isPremium === true">
+                <br><br>
+                <input  type="text" id="id" formControlName="premiumId" placeholder="Ingrese el ID si es premium">
+            </ng-container>
+            <br><br><br>
+            <input type="submit" class="btnAceptar" id="btnAceptar" value="Aceptar">
+            </form>
+        </div>
     </div>
-</div>
 
-<div class="container-right">
-    <!-- Contenido del contenedor derecho -->
+
+
+ <div class="container-right">
+    <br>
     <h2 style="text-align: center;">Entrada Premium</h2>
-
-    <!-- Campo de entrada y botón -->
     <div class="input-container">
         <input type="text" id="userID" placeholder="Ingrese su ID">
-        <br> <!-- Agrega un salto de línea para separar el input y el botón -->
+        <br> 
         <button id="btnAceptar">Aceptar</button>
     </div>
 </div>
@@ -49,11 +58,40 @@
                 <th>Modelo</th>
                 <th>Color</th>
                 <th>Premium</th>
+                <th>ID</th>
                 <th>Acción</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let cliente of clientes">
+            <tr *ngFor="let cliente of clientesPremium">
+                <td>{{cliente.nombre}} {{cliente.apellidos}}</td>
+                <td>{{cliente.placa}}</td>
+                <td>{{cliente.marca}}</td>
+                <td>{{cliente.modelo}}</td>
+                <td>{{cliente.color}}</td>
+                <td>{{cliente.isPremium ? 'Sí' : 'No'}}</td>
+                <td>{{cliente.premiumId}}</td>
+                <td><button class="btn btn-outline-danger" (click)="onClickDelete(cliente)">Marcar salida</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br><br><br>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Placa</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Color</th>
+                <th>Premium</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cliente of clientesNoPremium">
                 <td>{{cliente.nombre}} {{cliente.apellidos}}</td>
                 <td>{{cliente.placa}}</td>
                 <td>{{cliente.marca}}</td>
@@ -65,3 +103,6 @@
         </tbody>
     </table>
 </div>
+
+
+</body>

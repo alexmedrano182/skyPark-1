@@ -4,6 +4,12 @@ body {
     background-color: blanchedalmond;
 }
 
+app-navbar {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: blanchedalmond;
+}
+
 .container1 {
     text-align: center;
     /* Para centrar contenido */

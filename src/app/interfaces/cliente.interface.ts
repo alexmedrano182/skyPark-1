@@ -7,4 +7,5 @@ export default interface Cliente {
     modelo: string;
     color: string;
     isPremium: boolean;
+    premiumId: string;
 }

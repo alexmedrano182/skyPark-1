@@ -1,3 +1,12 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: blanchedalmond;
+}
+
+.btnAceptar{
+    margin-left: 50px;
+}
 .container {
     display: flex;
     justify-content: center;
@@ -14,14 +23,17 @@
 
 .container-left {
     width: 50%;
-    height: 425px;
+    height: 570px;
     background-color: #f0f0f0;
     float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .container-right {
     width: 50%;
-    height: 425px;
+    height: 570px;
     background-color: #e0e0e0;
     float: right;
     display: flex;
@@ -43,7 +55,7 @@
     border: 1px solid #ccc;
 }
 
-.input-container button {
+.input-container button, .btnAceptar {
     padding: 10px 20px;
     background-color: #333;
     color: white;
@@ -52,12 +64,13 @@
     cursor: pointer;
 }
 
-.input-container button:hover {
+.input-container button:hover, .btnAceptar:hover  {
     background-color: #1f1e1e;
 }
 
+
 .clientes {
-    margin-top: 20px;
+    margin-top: 600px;
 }
 
 .table {

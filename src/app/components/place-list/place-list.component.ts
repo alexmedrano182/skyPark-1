@@ -21,7 +21,8 @@ export class PlaceListComponent implements OnInit {
       marca: "Chevryolet",
       modelo: "Averlo",
       color: "Transparente",
-      isPremium: true
+      isPremium: true,
+      premiumId: ""
     }];
   }
 
