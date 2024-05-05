@@ -22,7 +22,9 @@ export class PlaceListComponent implements OnInit {
       modelo: "Averlo",
       color: "Transparente",
       isPremium: true,
-      premiumId: ""
+      premiumId: "",
+      entrada: "1",
+      salida: "2"
     }];
   }
 

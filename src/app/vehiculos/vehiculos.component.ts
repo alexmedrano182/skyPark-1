@@ -13,14 +13,15 @@ export class VehiculosComponent implements OnInit {
 
   formulario: FormGroup;
   clientes: Cliente[];
-  
+
 
   clientesNoPremium: any[] = [];
   clientesPremium: any[] = [];
   clienteDatos: any[] = [];
 
+  mostrarPopup: boolean = false;
+  hSalida = ""; 
 
-  
   constructor(
     private clientesService: ClientesService
   ) {
@@ -32,7 +33,9 @@ export class VehiculosComponent implements OnInit {
       modelo: new FormControl(),
       color: new FormControl(),
       isPremium: new FormControl(),
-      premiumId: new FormControl()
+      premiumId: new FormControl(),
+      entrada: new FormControl(),
+      salida: new FormControl()
     })
 
     this.clientes = [{
@@ -43,7 +46,9 @@ export class VehiculosComponent implements OnInit {
       modelo: "Averlo",
       color: "Transparente",
       isPremium: false,
-      premiumId: "1"
+      premiumId: "1",
+      entrada: "1",
+      salida: "2"
     }];
 
     this.clienteDatos = [{
@@ -54,7 +59,9 @@ export class VehiculosComponent implements OnInit {
       modelo: "Averlo",
       color: "Transparente",
       isPremium: false,
-      premiumId: "1"
+      premiumId: "1",
+      entrada: "1",
+      salida: "2"
     }];
 
     this.clientesNoPremium = [{
@@ -65,7 +72,9 @@ export class VehiculosComponent implements OnInit {
       modelo: "Averlo",
       color: "Transparente",
       isPremium: false,
-      premiumId: "1"
+      premiumId: "1",
+      entrada: "1",
+      salida: "2"
     }];
 
     this.clientesPremium = [{
@@ -76,7 +85,9 @@ export class VehiculosComponent implements OnInit {
       modelo: "Averlo",
       color: "Transparente",
       isPremium: true,
-      premiumId: "1"
+      premiumId: "1",
+      entrada: "1",
+      salida: "2"
     }];
   }
 
@@ -91,7 +102,12 @@ export class VehiculosComponent implements OnInit {
 
   async onSubmit() {
     console.log(this.formulario.value)
-    //this.formulario.value.nombre = "hola";
+    const fechaHoraActual = new Date();
+    const fechaFormateada = this.formatearFecha(fechaHoraActual);
+    const horaFormateada = this.formatearHora(fechaHoraActual);
+    console.log('La fecha y hora actual es:', fechaFormateada, horaFormateada);
+    console.log('La fecha y hora actual es:', fechaHoraActual);
+    this.formulario.value.entrada = horaFormateada;
     const response = await this.clientesService.addCliente(this.formulario.value);
     console.log(response);
   }
@@ -100,6 +116,44 @@ export class VehiculosComponent implements OnInit {
     const response = await this.clientesService.deleteCliente(cliente);
     this.clienteDatos = await this.clientes.filter(cliente => cliente.id === response.id);
     console.log(this.clienteDatos);
+    const fechaHoraActual = new Date();
+    const fechaFormateada = this.formatearFecha(fechaHoraActual);
+    const horaFormateada = this.formatearHora(fechaHoraActual);
+    this.hSalida = horaFormateada;
+    this.mostrarPopup = true;
   }
+
+  ocultarPopupFunc(): void {
+      this.mostrarPopup = false;
+  }
+
+  cobrar(cliente: Cliente) {
+    
+  }
+
+  imprimirTicket(cliente: Cliente) {
+    
+  }
+
+  obtenerFechaHoraActual(): void {
+    const fechaHoraActual = new Date();
+    console.log('La fecha y hora actual es:', fechaHoraActual);
+    // Aquí puedes hacer lo que necesites con la fecha y hora actual
+  }
+
+  private formatearFecha(fecha: Date): string {
+    const dia = fecha.getDate().toString().padStart(2, '0');
+    const mes = (fecha.getMonth() + 1).toString().padStart(2, '0');
+    const año = fecha.getFullYear();
+    return `${dia}/${mes}/${año}`;
+  }
+
+  private formatearHora(fecha: Date): string {
+    const hora = fecha.getHours().toString().padStart(2, '0');
+    const minutos = fecha.getMinutes().toString().padStart(2, '0');
+    const segundos = fecha.getSeconds().toString().padStart(2, '0');
+    return `${hora}:${minutos}:${segundos}`;
+  }
+
 
 }

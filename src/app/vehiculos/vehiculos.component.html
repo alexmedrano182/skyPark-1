@@ -1,108 +1,151 @@
 <body>
 
-<div class="container">
-    <img src="assets/logo.png" alt="Imagen Circular" class="circular-img">
-</div>
+    <div class="container">
+        <img src="assets/logo.png" alt="Imagen Circular" class="circular-img">
+    </div>
 
     <div class="container-left">
         <!-- Contenido del contenedor izquierdo -->
         <br>
         <h2 style="text-align: center;">Ingresar Entrada</h2>
-    
+
         <div class="input-container">
             <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-            <input type="text" id="nombre" formControlName="nombre" placeholder="Ingrese su Nombre">
-            <br><br>
-            <input type="text" id="apellidos" formControlName="apellidos" placeholder="Ingrese su Apellido">
-            <br><br>
-            <input type="text" id="placas" formControlName="placa" placeholder="Ingrese sus Placas">
-            <br><br>
-            <input type="text" id="marca" formControlName="marca" placeholder="Ingrese la Marca">
-            <br><br>
-            <input type="text" id="modelo" formControlName="modelo" placeholder="Ingrese el Modelo">
-            <br><br>
-            <input type="text" id="color" formControlName="color" placeholder="Ingrese el Color">
-            <br><br>
-            <label for="premium">Usuario Premium: </label>
-            <input type="checkbox" formControlName="isPremium" id="premiumCheckbox" name="premiumCheckbox">
-            <ng-container *ngIf="this.formulario.value.isPremium === true">
+                <input type="text" id="nombre" formControlName="nombre" placeholder="Ingrese su Nombre">
                 <br><br>
-                <input  type="text" id="id" formControlName="premiumId" placeholder="Ingrese el ID si es premium">
-            </ng-container>
-            <br><br><br>
-            <input type="submit" class="btnAceptar" id="btnAceptar" value="Aceptar">
+                <input type="text" id="apellidos" formControlName="apellidos" placeholder="Ingrese su Apellido">
+                <br><br>
+                <input type="text" id="placas" formControlName="placa" placeholder="Ingrese sus Placas">
+                <br><br>
+                <input type="text" id="marca" formControlName="marca" placeholder="Ingrese la Marca">
+                <br><br>
+                <input type="text" id="modelo" formControlName="modelo" placeholder="Ingrese el Modelo">
+                <br><br>
+                <input type="text" id="color" formControlName="color" placeholder="Ingrese el Color">
+                <br><br>
+                <label for="premium">Usuario Premium: </label>
+                <input type="checkbox" formControlName="isPremium" id="premiumCheckbox" name="premiumCheckbox">
+                <ng-container *ngIf="this.formulario.value.isPremium === true">
+                    <br><br>
+                    <input type="text" id="id" formControlName="premiumId" placeholder="Ingrese el ID si es premium">
+                </ng-container>
+                <br><br><br>
+                <input type="submit" class="btnAceptar" id="btnAceptar" value="Aceptar">
             </form>
         </div>
     </div>
 
 
 
- <div class="container-right">
-    <br>
-    <h2 style="text-align: center;">Entrada Premium</h2>
-    <div class="input-container">
-        <input type="text" id="userID" placeholder="Ingrese su ID">
-        <br> 
-        <button id="btnAceptar">Aceptar</button>
+    <div class="container-right">
+        <br>
+        <h2 style="text-align: center;">Entrada Premium</h2>
+        <div class="input-container">
+            <input type="text" id="userID" placeholder="Ingrese su ID">
+            <br>
+            <button id="btnAceptar">Aceptar</button>
+        </div>
     </div>
-</div>
 
 
-<div class="clientes">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Placa</th>
-                <th>Marca</th>
-                <th>Modelo</th>
-                <th>Color</th>
-                <th>Premium</th>
-                <th>ID</th>
-                <th>Acción</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let cliente of clientesPremium">
-                <td>{{cliente.nombre}} {{cliente.apellidos}}</td>
-                <td>{{cliente.placa}}</td>
-                <td>{{cliente.marca}}</td>
-                <td>{{cliente.modelo}}</td>
-                <td>{{cliente.color}}</td>
-                <td>{{cliente.isPremium ? 'Sí' : 'No'}}</td>
-                <td>{{cliente.premiumId}}</td>
-                <td><button class="btn btn-outline-danger" (click)="onClickDelete(cliente)">Marcar salida</button></td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="clientes">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Placa</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Color</th>
+                    <th>Premium</th>
+                    <th>ID</th>
+                    <th>Entrada</th>
+                    <th>Salida</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cliente of clientesPremium">
+                    <td>{{cliente.nombre}} {{cliente.apellidos}}</td>
+                    <td>{{cliente.placa}}</td>
+                    <td>{{cliente.marca}}</td>
+                    <td>{{cliente.modelo}}</td>
+                    <td>{{cliente.color}}</td>
+                    <td>{{cliente.isPremium ? 'Sí' : 'No'}}</td>
+                    <td>{{cliente.premiumId}}</td>
+                    <td>{{cliente.entrada}}</td>
+                    <td><button class="btn btn-outline-danger" (click)="onClickDelete(cliente)">Marcar salida</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
-    <br><br><br>
+        <br><br><br>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Placa</th>
-                <th>Marca</th>
-                <th>Modelo</th>
-                <th>Color</th>
-                <th>Premium</th>
-                <th>Acción</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let cliente of clientesNoPremium">
-                <td>{{cliente.nombre}} {{cliente.apellidos}}</td>
-                <td>{{cliente.placa}}</td>
-                <td>{{cliente.marca}}</td>
-                <td>{{cliente.modelo}}</td>
-                <td>{{cliente.color}}</td>
-                <td>{{cliente.isPremium ? 'Sí' : 'No'}}</td>
-                <td><button class="btn btn-outline-danger" (click)="onClickDelete(cliente)">Borrar</button></td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Placa</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Color</th>
+                    <th>Premium</th>
+                    <th>Entrada</th>
+                    <th>Salida</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cliente of clientesNoPremium">
+                    <td>{{cliente.nombre}} {{cliente.apellidos}}</td>
+                    <td>{{cliente.placa}}</td>
+                    <td>{{cliente.marca}}</td>
+                    <td>{{cliente.modelo}}</td>
+                    <td>{{cliente.color}}</td>
+                    <td>{{cliente.isPremium ? 'Sí' : 'No'}}</td>
+                    <td>{{cliente.entrada}}</td>
+                    <td><button class="btn btn-outline-danger" (click)="onClickDelete(cliente)">Marcar salida</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
+    <div *ngIf="mostrarPopup" class="popup">
+        <div class="popup-content">
+            <!-- Contenido de tu popup aquí -->
+            <h2>Marcar salida</h2>
+            <br><br>
+            <section *ngFor="let cliente of clienteDatos">
+                <h4>{{cliente.nombre}} {{cliente.apellidos}} {{cliente.placa}}</h4>
+                <h5>{{cliente.marca}} {{cliente.modelo}}</h5>
+                <h5>Color: {{cliente.color}}</h5>
+                <h5>Premium?{{cliente.isPremium ? 'Sí' : 'No'}}  {{cliente.premiumId}}</h5>
+                <br>
+                <h5>Entrada: {{cliente.entrada}}</h5>
+                <h5>Salida: {{this.hSalida}}</h5>
+                <h5>Tarifa: {{cliente.color}}</h5>
+                <br>
+                
+                <input type="text" id="costo" formControlName="tarifaCosto" placeholder="Costo total">
+                <input type="text" id="costoPago" formControlName="tarifaCosto" placeholder="Pago con">
+                <br><br>
+                <input type="text" id="codigoPromocion" formControlName="codigoPromocion" placeholder="Canjear código">
+
+
+            </section>
+
+            <br>
+            <section *ngFor="let cliente of clienteDatos">
+                <button (click)="cobrar(cliente)">Cobrar</button>
+            </section>
+
+            <section *ngFor="let cliente of clienteDatos">  
+                <button (click)="imprimirTicket(cliente)">Imprimir ticket</button>
+            </section>
+
+            <br>
+            <button (click)="ocultarPopupFunc()">Cerrar</button>
+        </div>
+    </div>
 
 </body>

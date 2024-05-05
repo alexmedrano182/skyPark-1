@@ -8,4 +8,6 @@ export default interface Cliente {
     color: string;
     isPremium: boolean;
     premiumId: string;
+    entrada: string;
+    salida: string;
 }
