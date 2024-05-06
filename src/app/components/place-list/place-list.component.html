@@ -1,0 +1,26 @@
+<div class="clientes">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Placa</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Color</th>
+                <th>Premium</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cliente of clientes">
+                <td>{{cliente.nombre}} {{cliente.apellidos}}</td>
+                <td>{{cliente.placa}}</td>
+                <td>{{cliente.marca}}</td>
+                <td>{{cliente.modelo}}</td>
+                <td>{{cliente.color}}</td>
+                <td>{{cliente.isPremium ? 'Sí' : 'No'}}</td>
+                <td><button class="btn btn-outline-danger" (click)="onClickDelete(cliente)">Borrar</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

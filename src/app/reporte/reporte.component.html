@@ -1,0 +1,30 @@
+<label for="fechaInicio">Fecha de Inicio:</label>
+<input type="date" id="fechaInicio">
+
+<label for="fechaSalida">Fecha de Salida:</label>
+<input type="date" id="fechaSalida">
+<br>
+
+<button onclick="calcularTotal()">Calcular Total</button>
+
+<!-- Esto debe ser dinámico-->
+<div id="Total">$ </div>
+
+<div id="totalTickets">Total de Tickets: </div>
+
+<table id="tablaTickets">
+  <thead>
+    <tr>
+      <th>Descripción</th>
+      <th>Placas</th>
+      <th>Entrada</th>
+      <th>Salida</th>
+      <th>Tiempo</th>
+      <th>Pago</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Aquí se llenará dinámicamente la tabla -->
+  </tbody>
+</table>
+

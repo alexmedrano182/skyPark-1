@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    /* ajusta el ancho según sea necesario */
+}
+
+.square {
+    width: 50px;
+    /* ajusta el tamaño del cuadro según sea necesario */
+    height: 50px;
+    /* ajusta el tamaño del cuadro según sea necesario */
+    border: 1px solid black;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 50px;
+    /* para centrar el texto verticalmente */
+}
+.estacionaminetoDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

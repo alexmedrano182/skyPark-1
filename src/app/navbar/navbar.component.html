@@ -1,0 +1,21 @@
+<nav>
+    <div class="logo">
+        <a [routerLink]="['login']">
+            <img src="assets/logo.png" alt="Logo de SkyPark">
+            SkyPark
+        </a>
+    </div>
+    <ul class="nav-links">
+        
+        <li *ngIf="userLogged; else elseLogin" (click)="onClick()" class="btn btn-outline-danger mt-5"><a href="#">Cerrar sesión</a></li>
+        <ng-template #elseLogin>
+            <li routerLinkActive="active"><a [routerLink]="['login']">Iniciar sesión</a></li>
+            <li routerLinkActive="active"><a [routerLink]="['register']">Registrarse</a></li>
+        </ng-template>
+        <li routerLinkActive="active"><a [routerLink]="['escritorio']">Escritorio</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['parking']">Parking</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['vehiculos']">Vehiculos</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['reporte']">Reporte</a></li>
+        <li><a href="#">User</a></li>
+    </ul>
+</nav>
