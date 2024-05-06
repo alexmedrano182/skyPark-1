@@ -1,6 +1,6 @@
 <br><br>
 <div class="estacionaminetoDiv">
     <div class="container">
-        <div *ngFor="let index of arrayOfIndexes" class="square">{{index}}</div>
+        <div *ngFor="let index of arrayOfIndexes; let i = index" class="square" [ngStyle]="{'background-color': coloresDeFondo[i]}">{{index}}</div>
     </div>
 </div>

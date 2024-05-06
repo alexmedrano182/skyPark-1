@@ -15,8 +15,10 @@ export class PlaceListComponent implements OnInit {
     private clientesService: ClientesService
   ) {
     this.clientes = [{
+      lugar: 1,
       nombre: "Dui",
       apellidos: "Gutierres",
+      correo: "sau@ius.com",
       placa: "AB-234-024",
       marca: "Chevryolet",
       modelo: "Averlo",

@@ -1,61 +1,61 @@
 {
-  "hash": "be36ced2",
+  "hash": "6de456c0",
   "configHash": "5eaf8d79",
-  "lockfileHash": "db74fdda",
-  "browserHash": "7f6d6dbd",
+  "lockfileHash": "06d2fcc1",
+  "browserHash": "acc9d83b",
   "optimized": {
     "@angular/common": {
       "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
-      "fileHash": "db08e002",
+      "fileHash": "796edaf5",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "5f79f287",
+      "fileHash": "98affe44",
       "needsInterop": false
     },
     "@angular/fire/app": {
       "src": "../../../../../node_modules/@angular/fire/fesm2022/angular-fire-app.mjs",
       "file": "@angular_fire_app.js",
-      "fileHash": "7e480db5",
+      "fileHash": "9d09fb04",
       "needsInterop": false
     },
     "@angular/fire/auth": {
       "src": "../../../../../node_modules/@angular/fire/fesm2022/angular-fire-auth.mjs",
       "file": "@angular_fire_auth.js",
-      "fileHash": "96cea3c2",
+      "fileHash": "146cb0ce",
       "needsInterop": false
     },
     "@angular/fire/auth-guard": {
       "src": "../../../../../node_modules/@angular/fire/fesm2022/angular-fire-auth-guard.mjs",
       "file": "@angular_fire_auth-guard.js",
-      "fileHash": "64989983",
+      "fileHash": "d9beafea",
       "needsInterop": false
     },
     "@angular/fire/firestore": {
       "src": "../../../../../node_modules/@angular/fire/fesm2022/angular-fire-firestore.mjs",
       "file": "@angular_fire_firestore.js",
-      "fileHash": "72b882a0",
+      "fileHash": "f7dbe663",
       "needsInterop": false
     },
     "@angular/forms": {
       "src": "../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
       "file": "@angular_forms.js",
-      "fileHash": "fe74b222",
+      "fileHash": "d825a1f5",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "aeb9c41d",
+      "fileHash": "fdbafb0a",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "efd4f147",
+      "fileHash": "b44c5235",
       "needsInterop": false
     }
   },

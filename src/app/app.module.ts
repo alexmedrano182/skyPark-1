@@ -15,6 +15,7 @@ import { VehiculosComponent } from './vehiculos/vehiculos.component';
 import { ReporteComponent } from './reporte/reporte.component';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { RegisterComponent } from './components/register/register.component';
+import { ParkingComponent } from './parking/parking.component';
 
 @NgModule({
   declarations: [
@@ -26,16 +27,17 @@ import { RegisterComponent } from './components/register/register.component';
     RegisterComponent,
     EscritorioComponent,
     VehiculosComponent,
-    ReporteComponent
+    ReporteComponent,
+    ParkingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    provideFirebaseApp(() => initializeApp({"projectId":"skypark-af251","appId":"1:940451947201:web:a614bd66bd5bc6d4222a40","storageBucket":"skypark-af251.appspot.com","apiKey":"AIzaSyDEXGUBksLJ0nlhnA4WugUUtEUo2uqPDiY","authDomain":"skypark-af251.firebaseapp.com","messagingSenderId":"940451947201"})),
+    provideFirebaseApp(() => initializeApp({"projectId":"skypark-af251","appId":"1:940451947201:web:64e203c1faa23e2e222a40","storageBucket":"skypark-af251.appspot.com","apiKey":"AIzaSyDEXGUBksLJ0nlhnA4WugUUtEUo2uqPDiY","authDomain":"skypark-af251.firebaseapp.com","messagingSenderId":"940451947201"})),
     provideFirestore(() => getFirestore()),
-    provideAuth(() => getAuth())
+    provideAuth(() => getAuth()),
   ],
   providers: [
     provideClientHydration()

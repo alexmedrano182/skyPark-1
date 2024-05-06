@@ -17,6 +17,8 @@
                 <br><br>
                 <input type="text" id="apellidos" formControlName="apellidos" placeholder="Ingrese su Apellido">
                 <br><br>
+                <input type="text" id="correo" formControlName="correo" placeholder="Ingrese su Correo">
+                <br><br>
                 <input type="text" id="placas" formControlName="placa" placeholder="Ingrese sus Placas">
                 <br><br>
                 <input type="text" id="marca" formControlName="marca" placeholder="Ingrese la Marca">
@@ -56,6 +58,7 @@
                 <tr>
                     <th>Lugar</th>
                     <th>Nombre</th>
+                    <th>Correo</th>
                     <th>Placa</th>
                     <th>Marca</th>
                     <th>Modelo</th>
@@ -70,6 +73,7 @@
                 <tr *ngFor="let cliente of clientesPremium">
                     <td>{{cliente.lugar}}</td>
                     <td>{{cliente.nombre}} {{cliente.apellidos}}</td>
+                    <td>{{cliente.correo}}</td>
                     <td>{{cliente.placa}}</td>
                     <td>{{cliente.marca}}</td>
                     <td>{{cliente.modelo}}</td>
@@ -90,6 +94,7 @@
                 <tr>
                     <th>Lugar</th>
                     <th>Nombre</th>
+                    <th>Correo</th>
                     <th>Placa</th>
                     <th>Marca</th>
                     <th>Modelo</th>
@@ -103,6 +108,7 @@
                 <tr *ngFor="let cliente of clientesNoPremium">
                     <td>{{cliente.lugar}}</td>
                     <td>{{cliente.nombre}} {{cliente.apellidos}}</td>
+                    <td>{{cliente.correo}}</td>
                     <td>{{cliente.placa}}</td>
                     <td>{{cliente.marca}}</td>
                     <td>{{cliente.modelo}}</td>

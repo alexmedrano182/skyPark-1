@@ -23,7 +23,7 @@ body {
 
 .container-left {
     width: 50%;
-    height: 610px;
+    height: 660px;
     background-color: #f0f0f0;
     float: left;
     display: flex;
@@ -33,7 +33,7 @@ body {
 
 .container-right {
     width: 50%;
-    height: 610px;
+    height: 660px;
     background-color: #e0e0e0;
     float: right;
     display: flex;
@@ -70,7 +70,7 @@ body {
 
 
 .clientes {
-    margin-top: 640px;
+    margin-top: 690px;
 }
 
 .table {
