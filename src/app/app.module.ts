@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { EscritorioComponent } from './escritorio/escritorio.component';
 import { VehiculosComponent } from './vehiculos/vehiculos.component';
+import { ParkingComponent } from './parking/parking.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { VehiculosComponent } from './vehiculos/vehiculos.component';
     NavbarComponent,
     LoginComponent,
     EscritorioComponent,
-    VehiculosComponent
+    VehiculosComponent,
+    ParkingComponent
   ],
   imports: [
     BrowserModule,

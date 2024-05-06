@@ -14,14 +14,14 @@
 
 .container-left {
     width: 50%;
-    height: 425px;
+    height: 430px;
     background-color: #f0f0f0;
     float: left;
 }
 
 .container-right {
     width: 50%;
-    height: 425px;
+    height: 430px;
     background-color: #e0e0e0;
     float: right;
     display: flex;
