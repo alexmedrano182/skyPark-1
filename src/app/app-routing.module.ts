@@ -6,6 +6,7 @@ import { VehiculosComponent } from './vehiculos/vehiculos.component';
 import { ReporteComponent } from './reporte/reporte.component';
 import { RegisterComponent } from './components/register/register.component';
 import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
+import { ParkingComponent } from './parking/parking.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/escritorio' },
@@ -28,6 +29,11 @@ const routes: Routes = [
     path: 'reporte',
     component: ReporteComponent,
     ...canActivate(() => redirectUnauthorizedTo(['/login']))
+  },
+  {
+    path: 'parking',
+    component: ParkingComponent,
+    ...canActivate(() => redirectUnauthorizedTo(['/parking']))
   },
   //{path:"reporte",component:ReporteComponent},
   {path:"**", pathMatch:"full",redirectTo:"login"}
