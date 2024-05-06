@@ -132,7 +132,7 @@ export class VehiculosComponent implements OnInit {
     // Convierte la diferencia de tiempo de milisegundos a horas
     const diferenciaHoras = diferenciaMs / (1000 * 60 * 60);
 
-    this.tarifaFinal = Math.ceil((diferenciaHoras/15) * 10) / 10;;
+    this.tarifaFinal = Math.ceil((diferenciaHoras*15) * 10) / 10;;
   }
 
   ocultarPopupFunc(): void {
