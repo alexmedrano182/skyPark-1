@@ -1,5 +1,6 @@
 export default interface Cliente {
     id?: string;
+    lugar?: number;
     nombre: string;
     apellidos: string;
     placa: string;

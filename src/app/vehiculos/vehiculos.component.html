@@ -11,6 +11,8 @@
 
         <div class="input-container">
             <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+                <input type="number" id="lugar" formControlName="lugar" placeholder="Ingrese el lugar">
+                <br><br>
                 <input type="text" id="nombre" formControlName="nombre" placeholder="Ingrese su Nombre">
                 <br><br>
                 <input type="text" id="apellidos" formControlName="apellidos" placeholder="Ingrese su Apellido">
@@ -52,6 +54,7 @@
         <table class="table">
             <thead>
                 <tr>
+                    <th>Lugar</th>
                     <th>Nombre</th>
                     <th>Placa</th>
                     <th>Marca</th>
@@ -65,6 +68,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let cliente of clientesPremium">
+                    <td>{{cliente.lugar}}</td>
                     <td>{{cliente.nombre}} {{cliente.apellidos}}</td>
                     <td>{{cliente.placa}}</td>
                     <td>{{cliente.marca}}</td>
@@ -84,6 +88,7 @@
         <table class="table">
             <thead>
                 <tr>
+                    <th>Lugar</th>
                     <th>Nombre</th>
                     <th>Placa</th>
                     <th>Marca</th>
@@ -96,6 +101,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let cliente of clientesNoPremium">
+                    <td>{{cliente.lugar}}</td>
                     <td>{{cliente.nombre}} {{cliente.apellidos}}</td>
                     <td>{{cliente.placa}}</td>
                     <td>{{cliente.marca}}</td>
@@ -116,7 +122,7 @@
             <h2>Marcar salida</h2>
             <br><br>
             <section *ngFor="let cliente of clienteDatos">
-                <h4>{{cliente.nombre}} {{cliente.apellidos}} {{cliente.placa}}</h4>
+                <h4>{{cliente.nombre}} {{cliente.apellidos}} {{cliente.placa}} {{cliente.lugar}}</h4>
                 <h5>{{cliente.marca}} {{cliente.modelo}}</h5>
                 <h5>Color: {{cliente.color}}</h5>
                 <h5>Premium?{{cliente.isPremium ? 'Sí' : 'No'}}  {{cliente.premiumId}}</h5>
@@ -126,18 +132,15 @@
                 <h5>Tarifa: ${{this.tarifaFinal}} pesos</h5>
                 <br>
                 
-                <input type="text" id="costo" formControlName="tarifaCosto" placeholder="Costo total">
-                <input type="text" id="costoPago" formControlName="tarifaCosto" placeholder="Pago con">
+                <h4>Cambio: ${{this.tarifaFinalPago}} pesos</h4>
+                <input type="number" id="costoPago" placeholder="Pago con" [(ngModel)]="valorCostoPago" (ngModelChange)="onCostoPagoInputChange($event)">
                 <br><br>
-                <input type="text" id="codigoPromocion" formControlName="codigoPromocion" placeholder="Canjear código">
+                <input type="text" id="codigoPromocion" placeholder="Canjear código" [(ngModel)]="valorCodigo" (ngModelChange)="onCodigoInputChange($event)">
 
 
             </section>
 
             <br>
-            <section *ngFor="let cliente of clienteDatos">
-                <button (click)="cobrar(cliente)">Cobrar</button>
-            </section>
 
             <section *ngFor="let cliente of clienteDatos">  
                 <button (click)="imprimirTicket(cliente)">Imprimir ticket</button>

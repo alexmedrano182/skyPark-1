@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import Cliente from '../interfaces/cliente.interface';
 import { ClientesService } from '../services/clientes.service';
 
@@ -23,11 +23,21 @@ export class VehiculosComponent implements OnInit {
   hEntrada = "";
   hSalida = ""; 
   tarifaFinal = 0;
+  tarifaFinalPago = 0;
+
+  valorCostoPago: number = 0;
+
+  valorInput: number = 0;
+
+  valorCodigo: string = "";
+  isDescuento = false;
+
 
   constructor(
     private clientesService: ClientesService
   ) {
     this.formulario = new FormGroup({
+      lugar: new FormControl(),
       nombre: new FormControl(),
       apellidos: new FormControl(),
       placa: new FormControl(),
@@ -41,6 +51,7 @@ export class VehiculosComponent implements OnInit {
     })
 
     this.clientes = [{
+      lugar: 1,
       nombre: "Dui",
       apellidos: "Gutierres",
       placa: "AB-234-024",
@@ -54,6 +65,7 @@ export class VehiculosComponent implements OnInit {
     }];
 
     this.clienteDatos = [{
+      lugar: 1,
       nombre: "Dui",
       apellidos: "Gutierres",
       placa: "AB-234-024",
@@ -67,6 +79,7 @@ export class VehiculosComponent implements OnInit {
     }];
 
     this.clientesNoPremium = [{
+      lugar: 1,
       nombre: "Dui",
       apellidos: "Gutierres",
       placa: "AB-234-024",
@@ -80,6 +93,7 @@ export class VehiculosComponent implements OnInit {
     }];
 
     this.clientesPremium = [{
+      lugar: 1,
       nombre: "Dui",
       apellidos: "Gutierres",
       placa: "AB-234-024",
@@ -132,7 +146,8 @@ export class VehiculosComponent implements OnInit {
     // Convierte la diferencia de tiempo de milisegundos a horas
     const diferenciaHoras = diferenciaMs / (1000 * 60 * 60);
 
-    this.tarifaFinal = Math.ceil((diferenciaHoras*15) * 10) / 10;;
+    this.tarifaFinal = Math.floor((diferenciaHoras*15) / 0.5) * 0.5; // Redondear al intervalo más cercano
+    this.tarifaFinalPago = this.tarifaFinal;
   }
 
   ocultarPopupFunc(): void {
@@ -174,6 +189,26 @@ export class VehiculosComponent implements OnInit {
     const segundos = parseInt(partesHora[2], 10);
 
     return new Date(0, 0, 0, hora, minutos, segundos); // Año y mes 0 representan la fecha base
+  }
+
+  onCostoPagoInputChange(valor: number): void {
+    // Manejar el evento de cambio en tiempo real
+    console.log('Valor actual del input:', valor);
+    this.tarifaFinalPago = valor - this.tarifaFinal;
+
+    // Se puede llamar a una función u otro método aquí para manejar el cambio en tiempo real :D
+  }
+
+  onCodigoInputChange(valorCodigo: string): void {
+    // Manejar el evento de cambio en tiempo real
+    console.log('Valor actual del input:', valorCodigo);
+    if (this.valorCodigo == "iskrispy8742" && this.isDescuento == false)
+      {
+        this.tarifaFinalPago = Math.floor((this.tarifaFinalPago * 0.75) / 0.5) * 0.5; // Redondear al intervalo más cercano
+        this.isDescuento = true;
+      }
+
+    // Se puede llamar a una función u otro método aquí para manejar el cambio en tiempo real :D
   }
 
 }
