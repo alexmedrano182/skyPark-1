@@ -20,7 +20,9 @@ export class VehiculosComponent implements OnInit {
   clienteDatos: any[] = [];
 
   mostrarPopup: boolean = false;
+  hEntrada = "";
   hSalida = ""; 
+  tarifaFinal = 0;
 
   constructor(
     private clientesService: ClientesService
@@ -121,6 +123,16 @@ export class VehiculosComponent implements OnInit {
     const horaFormateada = this.formatearHora(fechaHoraActual);
     this.hSalida = horaFormateada;
     this.mostrarPopup = true;
+    const horaInicio = this.convertirStringAHora(cliente.entrada);
+    const horaFin = this.convertirStringAHora(this.hSalida);
+
+    // Calcula la diferencia de tiempo en milisegundos
+    const diferenciaMs = horaFin.getTime() - horaInicio.getTime();
+
+    // Convierte la diferencia de tiempo de milisegundos a horas
+    const diferenciaHoras = diferenciaMs / (1000 * 60 * 60);
+
+    this.tarifaFinal = Math.ceil((diferenciaHoras/15) * 10) / 10;;
   }
 
   ocultarPopupFunc(): void {
@@ -155,5 +167,13 @@ export class VehiculosComponent implements OnInit {
     return `${hora}:${minutos}:${segundos}`;
   }
 
+  private convertirStringAHora(horaString: string): Date {
+    const partesHora = horaString.split(':');
+    const hora = parseInt(partesHora[0], 10);
+    const minutos = parseInt(partesHora[1], 10);
+    const segundos = parseInt(partesHora[2], 10);
+
+    return new Date(0, 0, 0, hora, minutos, segundos); // Año y mes 0 representan la fecha base
+  }
 
 }
