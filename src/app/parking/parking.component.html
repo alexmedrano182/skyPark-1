@@ -1,6 +1,24 @@
-<br><br>
-<div class="estacionaminetoDiv">
-    <div class="container">
-        <div *ngFor="let index of arrayOfIndexes" class="square">{{index}}</div>
-    </div>
-</div>
+<div class="stock-container">
+    <h2>Banco de Sangre - Stock de Componentes</h2>
+    <table class="stock-table">
+      <thead>
+        <tr>
+          <th>Componente</th>
+          <th>Grupo Sanguíneo</th>
+          <th>RH</th>
+          <th>Cantidad Disponible</th>
+          <th>Fecha de Caducidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of stock">
+          <td>{{ item.componente }}</td>
+          <td>{{ item.grupoSanguineo }}</td>
+          <td>{{ item.rh }}</td>
+          <td>{{ item.cantidad }}</td>
+          <td>{{ item.fechaCaducidad }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

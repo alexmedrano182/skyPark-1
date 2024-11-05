@@ -1,28 +1,40 @@
-<br><br><br>
 <div class="login">
     <div class="login-screen">
         <div class="app-title">
             <h1>Iniciar sesión</h1>
         </div>
 
-        <br>
-
-        <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
-        <div class="login-form">
-            <div class="control-group">
-                <input type="text" class="login-field" formControlName="email" value="" placeholder="Email" id="login-name">
-                <label class="login-field-icon fui-user" for="login-name"></label>
-            </div>
-
-            <div class="control-group">
-                <input type="password" class="login-field" formControlName="password" value="" placeholder="Password" id="login-pass">
-                <label class="login-field-icon fui-lock" for="login-pass"></label>
-            </div>
-
-            <input type="submit" class="btn btn-primary btn-large btn-block" value="Iniciar sesión">
+        <!-- Botones para elegir el tipo de inicio de sesión -->
+        <div class="button-group">
+            <button class="btn btn-primary" (click)="showLoginForm = 'usuario1'">Medico</button>
+            <button class="btn btn-secondary" (click)="showLoginForm = 'usuario2'">Quimico</button>
+            <button class="btn btn-success" (click)="showLoginForm = 'usuario3'">Familiar</button>
         </div>
-    </form>
-    <br><br><br>
-    <button class="btn btn-info" (click)="onClick()">Iniciar sesión con Google</button>
+
+        <div class="logo">
+            <img src="assets/logoh.png" alt="Logo">
+        </div>
+
+        <!-- Formulario de inicio de sesión que se muestra al hacer clic en uno de los botones -->
+        <div *ngIf="showLoginForm">
+            <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+                <div class="login-form">
+                    <div class="control-group">
+                        <input type="text" class="login-field" formControlName="email" placeholder="Email" id="login-name">
+                        <label class="login-field-icon fui-user" for="login-name"></label>
+                    </div>
+
+                    <div class="control-group">
+                        <input type="password" class="login-field" formControlName="password" placeholder="Password" id="login-pass">
+                        <label class="login-field-icon fui-lock" for="login-pass"></label>
+                    </div>
+
+                    <input type="submit" class="btn btn-primary btn-large btn-block" value="Iniciar sesión">
+                </div>
+            </form>
+        </div>
+
+        <!-- Botón de inicio de sesión con Google -->
+        <button class="btn btn-info" (click)="onClick()">Registrarse con Google</button>
     </div>
 </div>

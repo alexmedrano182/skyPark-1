@@ -1,3 +1,4 @@
+/* Estructura general */
 * {
     box-sizing: border-box;
 }
@@ -6,72 +7,169 @@
     outline: none;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    
+}
 
+/* Contenedor principal de inicio de sesión */
 .login {
     margin: 20px auto;
-    width: 300px;
+    margin-top: 5%;/* es para bajarlo*/
+    width: 350px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .login-screen {
-    background-color: #FFF;
-    padding: 20px;
-    border-radius: 5px
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
 }
 
-.app-title {
+/* Título de la aplicación */
+.app-title h1 {
     text-align: center;
-    color: #777;
+    color: #444;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    padding-bottom: 20px;
 }
 
+/* Botones de usuario */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.button-group .btn {
+    width: 100%;
+    padding: 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.button-group .btn-primary {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+}
+
+.button-group .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.button-group .btn-secondary {
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+}
+
+.button-group .btn-secondary:hover {
+    background-color: #218838;
+}
+
+.button-group .btn-success {
+    background-color: #17a2b8;
+    color: #ffffff;
+    border: none;
+}
+
+.button-group .btn-success:hover {
+    background-color: #117a8b;
+}
+
+/* Contenedor del logo */
+.logo {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.logo img {
+    width: 60px; /* Tamaño reducido de la imagen */
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Formulario de inicio de sesión */
 .login-form {
     text-align: center;
+    padding-top: 10px;
 }
 
 .control-group {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 input {
     text-align: center;
-    background-color: #ECF0F1;
-    border: 2px solid transparent;
-    border-radius: 3px;
+    background-color: #f0f4f8;
+    border: 1px solid #d1d9e0;
+    border-radius: 5px;
     font-size: 16px;
-    font-weight: 200;
-    padding: 10px 0;
-    width: 250px;
-    transition: border .5s;
+    padding: 12px 15px;
+    width: 100%;
+    transition: border 0.3s;
 }
 
 input:focus {
-    border: 2px solid #333;
-    box-shadow: none;
+    border: 1px solid #007bff;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
 }
 
-.btn {
-    border: 2px solid transparent;
-    background: #333;
+input[type="submit"] {
+    background-color: #333;
     color: #ffffff;
     font-size: 16px;
-    line-height: 25px;
-    padding: 10px 0;
-    text-decoration: none;
-    text-shadow: none;
-    border-radius: 3px;
-    box-shadow: none;
-    transition: 0.25s;
-    display: block;
-    width: 250px;
-    margin: 0 auto;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+    border: none;
 }
 
-.btn:hover {
+input[type="submit"]:hover {
     background-color: #1f1e1e;
 }
 
+/* Botón Google */
+.btn-info {
+    background-color: #db4437;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 0;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: none;
+}
+
+.btn-info:hover {
+    background-color: #b23027;
+}
+
+/* Enlace de inicio de sesión */
 .login-link {
     font-size: 12px;
-    color: #444;
+    color: #666;
     display: block;
-    margin-top: 12px;
+    margin-top: 15px;
+    text-align: center;
 }

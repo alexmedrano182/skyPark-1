@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppComponent } from './app.component'; // Asegúrate que esto esté correcto
 import { NewPlaceComponent } from './components/new-place/new-place.component';
 import { PlaceListComponent } from './components/place-list/place-list.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
@@ -40,6 +40,6 @@ import { RegisterComponent } from './components/register/register.component';
   providers: [
     provideClientHydration()
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent] // Esto debe coincidir con la declaración de AppComponent
 })
 export class AppModule { }
